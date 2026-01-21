@@ -88,3 +88,22 @@ class SessionUtil:
         
         if key in request.session:
             del request.session[key]
+
+    @classmethod
+    def clear_all(cls, request: HttpRequest) -> None:
+        """모든 세션 데이터 삭제
+
+        Args:
+            request (HttpRequest): _description_
+
+        Raises:
+            ValueError: _description_
+        """
+        if not request:
+            raise ValueError(cls._is_null.format("request"))
+        
+        # 세션 데이터만 비움
+        # request.session.clear()
+
+        # 세션 데이터를 비우고, 서버 DB에서 해당 세션 레코드를 삭제하며, 클라이언트의 세션 쿠키도 만료
+        request.session.flush()
