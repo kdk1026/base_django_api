@@ -28,7 +28,7 @@ NOT_FOUND = "Not Found"
 class PersonAPI(View):
 
     # GET /sample/persons or /sample/persons/{seq}
-    def get_persons(self, request, seq=None):
+    def get(self, request, seq=None):
         if seq:
             person = next((p for p in person_list if p.seq == seq), None)
             if person:
@@ -37,7 +37,7 @@ class PersonAPI(View):
         return JsonResponse([p.to_dict() for p in person_list], safe=False)
     
     # POST /sample/persons
-    def add_person(self, request):
+    def post(self, request):
         data = json.loads(request.body)
         new_seq = person_list[-1].seq + 1 if person_list else 1
         new_person = Person(new_seq, data['name'], data['age'])
@@ -45,7 +45,7 @@ class PersonAPI(View):
         return JsonResponse({"result": "success"}, status=201)
     
     # PUT /sample/persons
-    def update_person(self, request):
+    def put(self, request):
         data = json.loads(request.body)
         person = next((p for p in person_list if p.seq == data['seq']), None)
         if person:
@@ -55,11 +55,10 @@ class PersonAPI(View):
         return JsonResponse({"error": NOT_FOUND}, status=404)
     
     # DELETE /sample/persons/{seq}
-    def delete_person(self, request, seq):
+    def delete(self, request, seq):
         global person_list
         person = next((p for p in person_list if p.seq == seq), None)
         if person:
-            person_list = [p for p in person_list if p.seq != seq]
             return JsonResponse({"result": "success"})
         return JsonResponse({"error": NOT_FOUND}, status=404)
 
