@@ -25,8 +25,7 @@ person_list = [
 @method_decorator(csrf_exempt, name='dispatch')
 class PersonAPI(View):
 
-    # GET /sample/persons
-    # GET /sample/persons/{seq}
+    # GET /sample/persons or /sample/persons/{seq}
     def get(self, request, seq=None):
         if seq:
             person = next((p for p in person_list if p.seq == seq), None)
