@@ -69,7 +69,6 @@ class ResponseUtil:
 
         # IE / Edge (Old) 대응 및 최신 브라우저 대응
         if 'MSIE' in user_agent or 'Trident' in user_agent:
-            # IE 계열은 filename="인코딩된이름" 형태 선호
             response['Content-Disposition'] = f'attachment; filename="{encoded_file_name}"'
         else:
             # 최신 브라우저는 RFC 5987 규격(filename*) 사용
