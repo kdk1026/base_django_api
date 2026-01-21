@@ -46,6 +46,7 @@ class ResponseUtil:
         Raises:
             ValueError: _description_
             ValueError: _description_
+            ValueError: _description_
 
         Returns:
             HttpResponse: _description_
@@ -53,6 +54,9 @@ class ResponseUtil:
 
         if not request:
             raise ValueError(cls._is_null.format("request"))
+        
+        if not response:
+            raise ValueError(cls._is_null.format("response"))
         
         if not file_name or not file_name.strip():
             raise ValueError(cls._is_null_or_empty.format("file_name"))
