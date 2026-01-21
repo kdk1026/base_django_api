@@ -59,6 +59,7 @@ class PersonAPI(View):
         global person_list
         person = next((p for p in person_list if p.seq == seq), None)
         if person:
+            person_list[:] = [p for p in person_list if p.seq != seq]
             return JsonResponse({"result": "success"})
         return JsonResponse({"error": NOT_FOUND}, status=404)
 
