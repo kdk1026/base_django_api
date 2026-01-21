@@ -57,6 +57,7 @@ class CookieUtil:
             domain=config.domain,
             secure=config.profile != cls._LOCAL_PROFILE,
             httponly=True,
+            samesite='Lax'
         )
 
     @classmethod
@@ -90,6 +91,7 @@ class CookieUtil:
             domain=config.domain,
             secure=config.profile != cls._LOCAL_PROFILE,
             httponly=True,
+            samesite='Lax'
         )
 
     @classmethod
