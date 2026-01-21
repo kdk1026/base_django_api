@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ## Django 설치
 ```
-pip instal django
+pip install django
 ```
 
 <br />
