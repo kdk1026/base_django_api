@@ -40,6 +40,9 @@ class RequestUtil:
         Args:
             request (HttpRequest): _description_
 
+        Raises:
+            ValueError: _description_
+
         Returns:
             str: _description_
         """
@@ -59,6 +62,9 @@ class RequestUtil:
         Args:
             request (HttpRequest): _description_
 
+        Raises:
+            ValueError: _description_
+
         Returns:
             str: _description_
         """
@@ -77,6 +83,9 @@ class RequestUtil:
 
         Args:
             request (HttpRequest): _description_
+
+        Raises:
+            ValueError: _description_
 
         Returns:
             str: _description_

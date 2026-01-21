@@ -17,6 +17,10 @@ class ResponseUtil:
             request (HttpRequest): _description_
             file_name (str): _description_
 
+        Raises:
+            ValueError: _description_
+            ValueError: _description_
+
         Returns:
             str: _description_
         """
@@ -75,6 +79,9 @@ class ResponseUtil:
 
         Args:
             message (str): _description_
+
+        Raises:
+            ValueError: _description_
 
         Returns:
             JsonResponse: _description_

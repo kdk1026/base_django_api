@@ -35,6 +35,7 @@ class CookieUtil:
             ValueError: _description_
             ValueError: _description_
             ValueError: _description_
+            ValueError: _description_
         """
 
         if not response:
@@ -101,6 +102,13 @@ class CookieUtil:
         Args:
             request (HttpRequest): _description_
             cookie_name (str): _description_
+
+        Raises:
+            ValueError: _description_
+            ValueError: _description_
+
+        Returns:
+            str: _description_
         """
 
         if not request:
@@ -118,6 +126,10 @@ class CookieUtil:
         Args:
             response (HttpResponse): _description_
             config (CookieConfig): _description_
+
+        Raises:
+            ValueError: _description_
+            ValueError: _description_
         """
         
         if not response:
@@ -139,6 +151,10 @@ class CookieUtil:
         Args:
             request (HttpRequest): _description_
             cookie_name (str): _description_
+
+        Raises:
+            ValueError: _description_
+            ValueError: _description_
 
         Returns:
             bool: _description_

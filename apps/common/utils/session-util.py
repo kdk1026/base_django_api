@@ -22,6 +22,9 @@ class SessionUtil:
 
         Raises:
             ValueError: _description_
+            ValueError: _description_
+            ValueError: _description_
+            ValueError: _description_
         """
 
         if not request:
@@ -48,6 +51,10 @@ class SessionUtil:
             request (HttpRequest): _description_
             key (str): _description_
 
+        Raises:
+            ValueError: _description_
+            ValueError: _description_
+
         Returns:
             Any: _description_
         """
@@ -67,6 +74,10 @@ class SessionUtil:
         Args:
             request (HttpRequest): _description_
             key (str): _description_
+
+        Raises:
+            ValueError: _description_
+            ValueError: _description_
         """
 
         if not request:
