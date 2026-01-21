@@ -34,7 +34,6 @@ class PersonAPI(View):
             if person:
                 return JsonResponse(person.to_dict())
             return JsonResponse({"error": NOT_FOUND}, status=404)
-        
         return JsonResponse([p.to_dict() for p in person_list], safe=False)
     
     # POST /sample/persons
